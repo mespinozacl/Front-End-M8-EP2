@@ -14,7 +14,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        path: m8ep2 # Asegúrate de apuntar a la ruta correcta del repositorio en tu carpeta "m8ep2"
+        path: m8-ep2 # Asegúrate de apuntar a la ruta correcta del repositorio en tu carpeta "m8ep2"
 
     - name: Set up Node.js
       uses: actions/setup-node@v1
@@ -27,9 +27,9 @@ jobs:
         cache: ~/.npm
 
     - name: Install project dependencies
-      working-directory: m8ep2 # Cambia al directorio del proyecto
+      working-directory: m8-ep2 # Cambia al directorio del proyecto
       run: npm install
 
     - name: Run tests
-      working-directory: m8ep2 # Cambia al directorio del proyecto
+      working-directory: m8-ep2 # Cambia al directorio del proyecto
       run: npm test
