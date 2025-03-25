@@ -24,13 +24,15 @@ jobs:
       run: npm install @testing-library/react jest # Instala los paquetes de pruebas si no están ya instalados
       env:
         cache: ~/.npm
+
+    - name: Install project dependencies
+      #working-directory: m8-ep2 # Cambia al directorio del proyecto
+      run: npm install
       with:
         path: m8-ep2
 
-    - name: Install project dependencies
-      working-directory: m8-ep2 # Cambia al directorio del proyecto
-      run: npm install
-
     - name: Run tests
-      working-directory: m8-ep2 # Cambia al directorio del proyecto
+      #working-directory: m8-ep2 # Cambia al directorio del proyecto
       run: npm test
+      with:
+        path: m8-ep2
