@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./  # Ruta al Dockerfile del frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - API_URL=http://localhost:5173  # Ejemplo de variable de entorno para la URL del backend
+#    depends_on:
+#      - backend
+
+#----NO TENGO SEPARADO EL BACKEND PARA ESTE EJEMPLO----
+
+#  backend:
+#    build: ./  # Ruta al Dockerfile del backend
+#    ports:
+#      - "3001:3001"
+#    environment:
+#      - DATABASE_URL=http://localhost:3001
+
+#----NO TENGO SEPARADO EL BACKEND PARA ESTE EJEMPLO----
+
+
+    # volumes:
+    #   - backend-data:/data
+
+# volumes:
+#   backend-data:
