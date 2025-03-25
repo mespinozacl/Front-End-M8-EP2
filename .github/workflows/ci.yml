@@ -8,18 +8,20 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Set up Node.js
+      working-directory: m8-ep2
       uses: actions/setup-node@v1
       with:
         node-version: '14'
 
     - name: Cache dependencies
+      working-directory: m8-ep2
       run: npm install @testing-library/react jest # Instala los paquetes de pruebas si no están ya instalados
       env:
         cache: ~/.npm
