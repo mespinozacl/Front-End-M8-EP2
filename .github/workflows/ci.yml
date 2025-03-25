@@ -32,4 +32,6 @@ jobs:
 
     - name: Run tests
       working-directory: m8ep2 # Cambia al directorio del proyecto
+      env:
+        CI: true
       run: npm test
