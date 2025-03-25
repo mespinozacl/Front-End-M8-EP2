@@ -40,22 +40,23 @@ npm test
 > m8-ep2@0.0.0 test
 > jest
 
-(node:44729) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
-(Use `node --trace-deprecation ...` to show where the warning was created)
- PASS  src/pages/__test__/Login.test.tsx
-  <Login />
-    ✓ should call login with admin credentials and navigate to dashboard (124 ms)
-    ✓ should call login with user credentials and navigate to home (45 ms)
-    ✓ should display error message for incorrect credentials (25 ms)
+>>(node:44729) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+>>(Use `node --trace-deprecation ...` to show where the warning was created)
+>> PASS  src/pages/__test__/Login.test.tsx
+>>  <Login />
+>>    ✓ should call login with admin credentials and navigate to dashboard (124 ms)
+>>    ✓ should call login with user credentials and navigate to home (45 ms)
+>>    ✓ should display error message for incorrect credentials (25 ms)
 
-Test Suites: 1 passed, 1 total
-Tests:       3 passed, 3 total
-Snapshots:   0 total
-Time:        2.584 s, estimated 4 s
-Ran all test suites.
+>>Test Suites: 1 passed, 1 total
+>>Tests:       3 passed, 3 total
+>>Snapshots:   0 total
+>>Time:        2.584 s, estimated 4 s
+>>Ran all test suites.
 
-3. El paso 2 es requisito para que funcione esto
-i. se crea el archivo ci.yml que 
-.github/workflows/ci.yml
-
+3. github actions
+i. El paso 2 es requisito para que funcione esto
+ii. Se crea el archivo ci.yml en la ruta 
+>.github/workflows/ci.yml
+iii. Se verifica en github que se ejecutan las pruebas en github actiones
 ---
