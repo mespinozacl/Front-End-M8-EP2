@@ -34,7 +34,7 @@ const Login = () => {
         navigate("/");
       } else if (username == "user2" && password == "password") {
         //login("user");
-        login(new User(2,"user2",'user',"User2"));
+        login(new User(3,"user2",'user',"User2"));
         navigate("/");
       } else {
         //alert("Credenciales incorrectas");
