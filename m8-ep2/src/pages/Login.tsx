@@ -32,6 +32,10 @@ const Login = () => {
         //login("user");
         login(new User(2,"user",'user',"User"));
         navigate("/");
+      } else if (username == "user2" && password == "password") {
+        //login("user");
+        login(new User(3,"user2",'user',"User2"));
+        navigate("/");
       } else {
         //alert("Credenciales incorrectas");
         //console.error("Credenciales incorrectas");

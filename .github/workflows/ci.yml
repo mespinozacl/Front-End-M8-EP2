@@ -9,29 +9,33 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: m8-ep2
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        path: m8-ep2 # Asegúrate de apuntar a la ruta correcta del repositorio en tu carpeta "m8ep2"
+      uses: actions/checkout@v3
+
 
     - name: Set up Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '18'
 
-    - name: Cache dependencies
-      run: npm install @testing-library/react jest # Instala los paquetes de pruebas si no están ya instalados
-      env:
-        cache: ~/.npm
-
-    - name: Install project dependencies
-      working-directory: m8-ep2 # Cambia al directorio del proyecto
+    - name: Install dependencies
       run: npm install
 
+    - name: Install TypeScript dependencies for Jest
+      run: npm install --save-dev typescript ts-jest @types/jest
+
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('m8-ep2/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
     - name: Run tests
-      working-directory: m8-ep2 # Cambia al directorio del proyecto
-      env:
-        CI: true
       run: npm test
