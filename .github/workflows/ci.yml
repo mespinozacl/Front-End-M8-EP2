@@ -26,11 +26,9 @@ jobs:
         cache: ~/.npm
 
     - name: Install project dependencies
-      #working-directory: m8-ep2 # Cambia al directorio del proyecto
+      working-directory: m8-ep2
       run: npm install
-      with:
-        path: m8-ep2
 
     - name: Run tests
-      working-directory: m8-ep2 # Cambia al directorio del proyecto
+      working-directory: m8-ep2
       run: npm test
