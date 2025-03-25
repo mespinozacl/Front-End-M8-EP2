@@ -11,27 +11,30 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: m8-ep2 # Establece el directorio de trabajo por defecto para todos los comandos
+        working-directory: m8-ep2
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3 # Se recomienda usar la versión más reciente
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3 # Se recomienda usar la versión más reciente
+      uses: actions/setup-node@v3
       with:
-        node-version: '18' # Usar una versión de Node.js más reciente y con soporte activo
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Install TypeScript dependencies for Jest
+      run: npm install --save-dev typescript ts-jest @types/jest
 
     - name: Cache dependencies
-      uses: actions/cache@v3 # Utiliza la acción 'cache' para gestionar el caché de npm
+      uses: actions/cache@v3
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('m8-ep2/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-
-    - name: Install project dependencies
-      run: npm install
 
     - name: Run tests
       run: npm test
