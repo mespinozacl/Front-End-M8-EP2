@@ -1,5 +1,5 @@
 {
-  "compilerOptions": { "target": "es6", "module": "esnext", "jsx": "react-jsx", "strict": true, "lib": ["ES2021"], "esModuleInterop": true, "moduleResolution": "nodenext" }, 
+  "compilerOptions": { "target": "es6", "module": "NodeNext", "jsx": "react-jsx", "strict": true, "lib": ["ES2021"], "esModuleInterop": true, "moduleResolution": "nodenext" }, 
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
