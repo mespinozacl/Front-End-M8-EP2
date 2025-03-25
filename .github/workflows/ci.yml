@@ -8,23 +8,24 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: 18-alpine
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        path: m8-ep2 # Asegúrate de apuntar a la ruta correcta del repositorio en tu carpeta "m8ep2"
 
     - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
         node-version: '14'
+        path: m8-ep2
 
     - name: Cache dependencies
       run: npm install @testing-library/react jest # Instala los paquetes de pruebas si no están ya instalados
       env:
         cache: ~/.npm
+      with:
+        path: m8-ep2
 
     - name: Install project dependencies
       working-directory: m8-ep2 # Cambia al directorio del proyecto
