@@ -32,7 +32,5 @@ jobs:
         path: m8-ep2
 
     - name: Run tests
-      #working-directory: m8-ep2 # Cambia al directorio del proyecto
+      working-directory: m8-ep2 # Cambia al directorio del proyecto
       run: npm test
-      with:
-        path: m8-ep2
