@@ -59,4 +59,8 @@ i. El paso 2 es requisito para que funcione esto
 ii. Se crea el archivo ci.yml en la ruta 
 >.github/workflows/ci.yml
 iii. Se verifica en github que se ejecutan las pruebas en github actiones
----
+iv. En el punto 4 se hizo un set de iteraciones para lograr la configuracion que funciono en Github (en detalle jest.config.ts -> jest.config.cjs)
+
+4. Gestión de ramas en la nube
+i. se creo una rama develop para iterar en la configuracion del punto 3
+ii. se hizo un pull request con un merge para llevar los cambios de la rama develop a main.
